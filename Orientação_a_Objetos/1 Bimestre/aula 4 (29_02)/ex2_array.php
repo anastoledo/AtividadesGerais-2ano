@@ -9,10 +9,10 @@ for ($i=0; $i < 5; $i++) {
     print "\n";
 }
 
-array_push ($vetor2, $vetor1);
+$vetor2 = $vetor1;
 
 foreach ($vetor2 as $vetor) {
     
-    print $vetor .  ",";
+    print $vetor .  ", ";
 }
 
