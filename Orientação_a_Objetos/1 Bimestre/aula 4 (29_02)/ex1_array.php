@@ -1,10 +1,11 @@
 <?php
+    
 
 $vetor = [];
 
 for ($i=0; $i < 10; $i++) { 
-    $respostaUser = readline("Informe um número: ");
-    $vetor[] = $respostaUser;
+    $num = readline("Informe um número: ");
+    $vetor[] = $num;
     print "\n";
 }
 
