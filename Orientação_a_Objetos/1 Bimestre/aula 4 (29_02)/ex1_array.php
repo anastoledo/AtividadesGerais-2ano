@@ -1,5 +1,4 @@
 <?php
-    
 
 $vetor = [];
 
@@ -11,10 +10,13 @@ for ($i=0; $i < 10; $i++) {
 
     print "\n";
 
-    print_r ($vetor);
-    print " ";
-    
-    $soma = array_sum($vetor);
+    $soma = 0;
+    $aux = $soma;
+
+    foreach ($vetor as $soma) {
+        $aux = $aux + $soma;
+        $soma = $aux;
+    }
 
     $media = $soma/10;
 
