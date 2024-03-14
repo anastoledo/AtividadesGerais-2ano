@@ -43,7 +43,7 @@ for($i=0; $i<5; $i++) {
     array_push($vetPrincipal, $num);
 }
 
-$vet1[] = vetor1($vetPrincipal);
+$vet1 = vetor1($vetPrincipal);
     print ("O valor do vetor 1 é igual: ");
     foreach ($vet1 as $g) {
         print ("$g" . "\n");
@@ -51,7 +51,7 @@ $vet1[] = vetor1($vetPrincipal);
     
     print "\n";
 
-    $vet3[] = vetor3($vetPrincipal);
+    $vet3 = vetor3($vetPrincipal);
     print ("O valor do vetor 3 é igual: ");
     foreach ($vet3 as $valor) {
         print ("$valor" . "\n");
