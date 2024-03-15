@@ -1,0 +1,75 @@
+* { 
+    margin: 0;
+    padding: 0;                 /* Está pegando TUDO */
+    box-sizing: content-box;
+}
+
+
+/* LAYOUT*/
+
+body {
+    background-color: #FDF7E4;
+    text-align: center;
+    font-family: Ubuntu, sans-serif;
+
+}
+
+header {
+    background-color: #DED0B6;
+    padding: 30px 0 ; /*Top e Bottom, Left e Right */
+    text-align: center;
+
+}
+
+main .container {
+        background: #FDF7E4;
+        padding: 5px;
+        min-height: calc(100vh - 78px - 78px);
+        text-align: center;
+        
+}
+
+
+
+footer {
+    background-color: #DED0B6;
+    padding: 30px 0 ; /*Top e Bottom, Left e Right */
+    text-align: center;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto 0 auto ; /* top, right, bottom, left */
+    
+}
+
+/* COLUNAS DA PÁGINA INICIAL */
+
+aside{
+    width: 20%;
+    background: #BBAB8C;
+    float: left;
+    min-height: calc(100vh - 78px - 72px );
+    
+}
+
+section {
+    width: 80%;
+    background: #FAEED1;
+    float: left;
+    
+}
+
+.project {
+    width: 30%;
+    border: solid 2px #DED0B6;
+    height: 180px;
+    float: left;
+    padding: 10px;
+    overflow: hidden;
+
+}
+
+.project img {
+    max-width: 100%;
+}
