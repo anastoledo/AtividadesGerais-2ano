@@ -1,0 +1,21 @@
+<?php
+
+$turmas = array();
+
+//Ler turmas
+for ($i=0; $i < 4; $i++) { 
+    $turma = array();
+    $turma ["curso"] = readline("Informe o curso: ");
+    $turma ["ano"] = readline("Informe o ano: ");
+    $turma ["qtdAlunos"] = readline("Informe a quantidade de alunos: ");
+
+    array_push($turmas, $turma);
+}
+
+$soma = 0;
+
+foreach ($turmas as $alunos) {
+    $soma = $soma + $alunos["qtdAlunos"];
+}
+
+print "O total de alunos é igual a $soma . \n";
