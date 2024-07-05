@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+
+    background: #4F6F52 ;
+    padding: 20px 0;
+    height: 80px;
+}
+
+main {
+    background: #E8DFCA ;
+    height: calc(100vh - 60px - 60px); /* 100% o tamanhoda tela  */
+}
+
+footer {
+    background: #4F6F52 ;
+    height: 80px;
+}
+
+
+p {
+    background: #1A4D2E;
+    margin: 20px;
+}
+
+b {
+    background: #F5EFE6;
+    width: 100px;
+}
