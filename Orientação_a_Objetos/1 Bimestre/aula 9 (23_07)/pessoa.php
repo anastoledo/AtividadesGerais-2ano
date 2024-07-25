@@ -26,10 +26,10 @@ class Pessoa {
 $pessoa1 = new Pessoa();
 
 $pessoa1->nome = readline ("Informe o nome: \n");
-$pessoa1->endereco = readline ("Informe o endereço: \n");;
-$pessoa1->cidade = readline ("Informe a cidade: \n");;
-$pessoa1->UF = readline ("Informe o UF: \n");;
-$pessoa1->altura = readline ("Informe a altura: \n");;
+$pessoa1->endereco = readline ("Informe o endereço: \n");
+$pessoa1->cidade = readline ("Informe a cidade: \n");
+$pessoa1->UF = readline ("Informe o UF: \n");
+$pessoa1->altura = readline ("Informe a altura: \n");
 
 $pessoa1 ->falarOla();
 $pessoa1->falarEndereco();
