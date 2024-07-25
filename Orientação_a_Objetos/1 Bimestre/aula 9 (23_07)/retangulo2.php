@@ -13,16 +13,20 @@ class Retangulo {
     }
     function area () {
         $area = $this->base*$this->altura;
-        print "A área do retângulo é $area\n";
+        return $area;
     }
     function perimetro () {
         $perimetro = 2*($this->base+$this->altura);
-        print "Já o perimetro é $perimetro\n";
+        return $perimetro;
     }
 
 }
 
 //programa principal
-$retangulo1 = new Retangulo($base = readline ("Informe a base: \n"), $altura = readline ("Informe a altura: \n"));
-$retangulo1-> area();
-$retangulo1-> perimetro();
+$base = readline("Informe a base: \n");
+$altura = readline("Informe a altura: \n");
+$retangulo = new Retangulo ($base, $altura);
+$retangulo-> area();
+print "A área do retangulo é igual a ". $retangulo-> area() . " cm \n";
+$retangulo-> perimetro();
+print "O perimetro do retangulo é igual a ". $retangulo-> perimetro() . " cm \n";
