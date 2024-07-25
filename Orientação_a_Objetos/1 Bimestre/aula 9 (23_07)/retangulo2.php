@@ -23,10 +23,15 @@ class Retangulo {
 }
 
 //programa principal
-$base = readline("Informe a base: \n");
-$altura = readline("Informe a altura: \n");
-$retangulo = new Retangulo ($base, $altura);
-$retangulo-> area();
-print "A área do retangulo é igual a ". $retangulo-> area() . " cm \n";
-$retangulo-> perimetro();
-print "O perimetro do retangulo é igual a ". $retangulo-> perimetro() . " cm \n";
+for ($i=0; $i < 3; $i++) { 
+    $base = readline("Informe a base: \n");
+    $altura = readline("Informe a altura: \n");
+
+    $retangulo = new Retangulo ($base, $altura);
+
+    $retangulo-> area();
+    print "A área do $i retangulo é igual a ". $retangulo-> area() . " cm \n";
+    $retangulo-> perimetro();
+    print "O perimetro do $i retangulo é igual a ". $retangulo-> perimetro() . " cm \n";
+}
+
