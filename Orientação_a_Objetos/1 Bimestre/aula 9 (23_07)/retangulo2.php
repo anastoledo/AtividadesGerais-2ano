@@ -23,6 +23,6 @@ class Retangulo {
 }
 
 //programa principal
-$retangulo1 = new Retangulo(13, 4);
+$retangulo1 = new Retangulo($base = readline ("Informe a base: \n"), $altura = readline ("Informe a altura: \n"));
 $retangulo1-> area();
 $retangulo1-> perimetro();
