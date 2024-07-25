@@ -21,7 +21,7 @@ class Retangulo {
 
 //programa principal
 
-for ($i=0; $i < 3 ; $i++) { 
+for ($i=1; $i < 3 ; $i++) { 
     $retangulo = new Retangulo();
 
     $retangulo->base = readline ("Informe a base: \n");
