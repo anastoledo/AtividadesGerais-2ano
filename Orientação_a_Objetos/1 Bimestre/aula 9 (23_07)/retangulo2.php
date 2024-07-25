@@ -23,7 +23,7 @@ class Retangulo {
 }
 
 //programa principal
-for ($i=0; $i < 3; $i++) { 
+for ($i=1; $i < 3; $i++) { 
     $base = readline("Informe a base: \n");
     $altura = readline("Informe a altura: \n");
 
