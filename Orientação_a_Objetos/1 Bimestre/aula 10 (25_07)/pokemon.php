@@ -8,37 +8,36 @@ class Pokemon {
     public $ataque;
     public $defesa;
     public $velocidade;
+    public $nivel;
 
     //métodos
-    function __construct($nome, $tipo, $ataque, $defesa, $velocidade) {
+    function __construct($nome, $tipo, $ataque, $defesa, $velocidade, $nivel) {
         $this->nome = $nome;
         $this->tipo = $tipo;
         $this->ataque = $ataque;
         $this->defesa = $defesa;
         $this->velocidade = $velocidade;
+        $this->nivel = $nivel;
     }
     function batalha ($n) {
         print "O $n está em uma batalha! \n";
     }
-    function aumentarNivel ($n,$a, $b, $c) {
-        if ($a+$b+$c >= 55) {
-            print "O $n subiu de nível! \n";
+
+    function aumentarNivel ($x, $n, $e) {
+        if ($e % 2 == 0) {
+            $x = $x + 1;
+            print "O $n súbiu de nivel!! agora seu nivel é $x \n";        
         }
         else {
-            print "O $n desceu de nível! \n";
+            $x = $x - 1;
+            print "Infelizmente você não foi surtudo e acabou descendo um nivel :((\n";
         }
     }
-    function aumentarPontos ($n, $a, $b, $c) {
-        if ($a+$b+$c >= 55) {
-            print "O $n ganhou pontos! \n";
-        }
-        else {
-            print "O $n perdeu pontos! \n";
-        }
-    }
+
     function aumentarExperiencia ($n) {
-        print "Mesmo com todos os acontecimentos $n ainda ganhou experiência! \n";
+        print "Após a batalha $n ganhou experiencia \n";
     }
+    
 }
 
 $num = readline("Quantos pokémon deseja fazer? ");
@@ -49,12 +48,16 @@ for ($i=1; $i <= $num ; $i++) {
     $ataque = readline("Qual o ataque do $i pokémon? \n");
     $defesa = readline("Qual a defesa do $i pokémon? \n");
     $velocidade = readline("Qual a velocidade do $i pokémon? \n");
-    $pokémons = new Pokemon ($nome,$tipo, $ataque, $defesa, $velocidade);
+    $nivel = readline("Informe o nível do $i pokémon: ");
+    $pokémons = new Pokemon ($nome,$tipo, $ataque, $defesa, $velocidade, $nivel);
 
     $pokémons-> batalha($nome);
-    $pokémons-> aumentarNivel($nome, $ataque, $defesa, $velocidade);
-    $pokémons-> aumentarPontos($nome, $ataque, $defesa, $velocidade);
-    $pokémons-> aumentarExperiencia($nome);
+    print "Agora vamos descobrir se voce se saiu bem na batalha (ATENÇÃO: se você não se sair bem, vai descer de nivel)";
+    $escolha = readline("Informe um número: (tudo dependerá da sua sorte agora!)");
+    $pokémons-> aumentarNivel($nivel, $nome, $escolha);
+    $pokémons-> aumentarExperiencia($nome); 
+       
+    }
 
 
-}
+
