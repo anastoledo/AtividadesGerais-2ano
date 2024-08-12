@@ -10,14 +10,8 @@ class Aluno {
     //metodos & gets e sets
 
     public function media () {
-         $this->nota1 + $this->nota2 / 2;
 
         return ($this->nota1 + $this->nota2) / 2;
-    }
-    public function __construct($nome, $nota1, $nota2) {
-        $this->nome = $nome;
-        $this->nota1 = $nota1;
-        $this->nota2 = $nota2;
     }
 
     public function setNome($nome): self {
@@ -38,6 +32,10 @@ class Aluno {
         return $this;
     }
 
+    public function getNome() {
+        return $this->nome;
+    }
+
     public function getNota1() {
         return $this->nota1;
     }
@@ -47,14 +45,18 @@ class Aluno {
     }
 }
 
-
+//ler dados
 for ($i=1; $i < 3 ; $i++) { 
    $aluno =  new Aluno();
    $aluno->setNome(readline("Informe o seu nome: \n"));
    $aluno->setNota1(readline("Informe a NOTA 1: \n"));
    $aluno->setNota2(readline("Informe a NOTA 2: \n"));
+   print "O aluno " . $aluno->getNome() . " e a média é " . $aluno->media();
 
-   $aluno 
+   
 
 
+
+
+ 
 }
