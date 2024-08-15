@@ -54,8 +54,8 @@ $calculadora = new Calculadora();
 $calculadora->setNumA(readline("Informe o valor de A: "));
 $calculadora->setNumB(readline("Informe o valor de B: "));
 
-print "A soma de A + B é " . $calculadora->soma();
-print "A subtração de A - B é " . $calculadora->subtracao();
-print "A multiplicação de A X B é " . $calculadora->multiplicacao();
-print "A divisão de A / B é " . $calculadora->divisao();
-print "O resto de A e B é " . $calculadora->resto();
+print " A soma de A + B é " . $calculadora->soma(). "\n ";
+print " A subtração de A - B é " . $calculadora->subtracao(). "\n ";
+print " A multiplicação de A X B é " . $calculadora->multiplicacao(). "\n ";
+print " A divisão de A / B é " . $calculadora->divisao(). "\n ";
+print " O resto de A e B é " . $calculadora->resto(). "\n ";
