@@ -8,6 +8,11 @@ class Carro {
     private $velocidadeMax;
 
     //metodos
+
+    public function __toString() {
+        $carro =  $this->modelo . " - " . $this->marca . ", fabricado em " . $this->anoFabricacao . ", com velocidade máxima de " . $this->velocidadeMax . " km/h.\n";
+        return $carro;
+    }
     public function getModelo() {
         return $this->modelo;
     }
@@ -48,25 +53,25 @@ class Carro {
 
         return $this;
     }
-}
+}// fim classe carro
 
 // programa principal
 
-print "----CARRO 1----";
+print "----CARRO 1----\n";
 $carro1 = new Carro();
 $carro1->setModelo(readline("Informe o modelo do carro: "));
 $carro1->setMarca(readline("Informe a marca do carro: "));
 $carro1->setAnoFabricacao(readline("Informe o ano de fabricação do carro: "));
 $carro1->setVelocidadeMax(readline("Informe a velocidade máxima do carro: "));
 
-print "----CARRO 2----";
+print "----CARRO 2----\n";
 $carro2 = new Carro();
 $carro2->setModelo(readline("Informe o modelo do carro: "));
 $carro2->setMarca(readline("Informe a marca do carro: "));
 $carro2->setAnoFabricacao(readline("Informe o ano de fabricação do carro: "));
 $carro2->setVelocidadeMax(readline("Informe a velocidade máxima do carro: "));
 
-print "----CARRO 3----";
+print "----CARRO 3----\n";
 $carro3 = new Carro();
 $carro3->setModelo(readline("Informe o modelo do carro: "));
 $carro3->setMarca(readline("Informe a marca do carro: "));
@@ -90,6 +95,6 @@ if ($carro3->getVelocidadeMax() > $carroMaisRapido->getVelocidadeMax()) {
     $carroMaisRapido = $carro3;
 }
 
-print "O carro mais rápido é: " . $carroMaisRapido->getModelo() . " - " . $carroMaisRapido->getMarca() . ", fabricado em " . $carroMaisRapido->getAnoFabricacao() . ", com velocidade máxima de " . $carroMaisRapido->getVelocidadeMax() . " km/h.\n";
+print "O carro mais rápido é: " . $carroMaisRapido;
 
-print "O carro mais lento é: " . $carroMaisLento->getModelo() . " - " . $carroMaisLento->getMarca() . ", fabricado em " . $carroMaisLento->getAnoFabricacao() . ", com velocidade máxima de " . $carroMaisLento->getVelocidadeMax() . " km/h.\n";
+print "O carro mais lento é: " . $carroMaisLento;
