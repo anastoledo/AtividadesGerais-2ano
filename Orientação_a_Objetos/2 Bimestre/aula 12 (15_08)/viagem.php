@@ -31,7 +31,8 @@ class Veiculo {
 
 // Programa principal
 
-$veiculo = new Veiculo(50);
+$capacidade = readline("Informe a capacidade do veículo: ");
+$veiculo = new Veiculo($capacidade);
 $quantidadePassagens = readline("Informe a quantidade de passagens: (DIGITE 0 PARA SAIR) ");
 
     if ($quantidadePassagens == 0) {
@@ -43,5 +44,5 @@ $quantidadePassagens = readline("Informe a quantidade de passagens: (DIGITE 0 PA
     }
     else {
         print "Não fui possivel efetuar a venda da passagem, pois atingimos 100% da capacidade do veículo\n";
-       print "No momento o número de passageiros no veículo é de " . $veiculo->getPassagensVendidas() . "mas a nossa capacidade no momento é de " . $veiculo->getCapacidade(). "\n";
+       print "No momento o número de passageiros no veículo é de " . $veiculo->getPassagensVendidas() . " e a nossa capacidade no momento é de " . $veiculo->getCapacidade(). "\n";
     }
