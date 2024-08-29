@@ -48,10 +48,10 @@ $escolha = 0;
 $cadastro = array();
 
 do {
-    print "\n--------- MENU ----------- \n";
-    print " 1 -------- CADASTRAR ------ \n";
-    print " 2 -------- LISTAR --------- \n";
-    print " 0 -------- SAIR ----------- \n";
+    print "\n * -------- MENU ------------* \n";
+    print " 1 -------- CADASTRAR ------- \n";
+    print " 2 -------- LISTAR ----------\n";
+    print " 0 -------- SAIR ------------ \n";
 
     $escolha = readline("De qual serviço você precisa? ");
 
@@ -76,8 +76,8 @@ do {
 
         case 2:
             
-            foreach ($cadastro as $c) {
-                print $c;
+            foreach ($cadastro as $i => $c) {
+                print ($i + 1) . " | " . $c;
             }
 
         break;
