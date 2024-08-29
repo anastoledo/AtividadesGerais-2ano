@@ -31,7 +31,8 @@ class Escola {
 
     //passar pra string
     public function __toString() {
-        return "Nome: " . $this->getNome() . " | Endereço: " .$this->getEndereco(). " | Quantidade de Alunos: " . $this->getQuantidadeAlunos()  . "\n";
+        $aaa = "Nome: " . $this->getNome() . " | Endereço: " .$this->getEndereco(). " | Quantidade de Alunos: " . $this->getQuantidadeAlunos()  . "\n";
+        return $aaa;
     }
 }
 
@@ -50,5 +51,17 @@ for ($i = 0; $i < 4; $i++) {
 
 //imprimir o array
 foreach ($escolas as $escola) {
-    echo $escola;
+    print $escola;
 }
+
+//verificar mais alunos
+$escolaMaisAlunos = $escolas[0];
+
+foreach ($escolas as $escola) {
+   if ($escola->getQuantidadeAlunos() > $escolaMaisAlunos->getQuantidadeAlunos()) {
+    $escolaMaisAlunos = $escola;
+    }
+}
+
+print "A escola com mais alunos é: \n";
+print $escolaMaisAlunos;
