@@ -51,6 +51,7 @@ do {
     print "\n * -------- MENU ------------* \n";
     print " 1 -------- CADASTRAR ------- \n";
     print " 2 -------- LISTAR ----------\n";
+    print " 3 -------- REMOVER ----------\n";
     print " 0 -------- SAIR ------------ \n";
 
     $escolha = readline("De qual serviço você precisa? ");
@@ -79,6 +80,18 @@ do {
             foreach ($cadastro as $i => $c) {
                 print ($i + 1) . " | " . $c;
             }
+
+        break;
+
+        case 3:
+
+            foreach ($cadastro as $i => $c) {
+                print ($i + 1) . " | " . $c;
+            }
+
+            $indiceRemover = readline("Quem você gostaria de remover? (INFORME O NÚMERO) :");
+
+            array_splice($cadastro, $indiceRemover, 1);
 
         break;
         
