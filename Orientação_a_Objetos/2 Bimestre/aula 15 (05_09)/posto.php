@@ -15,31 +15,26 @@ class Posto {
         $this->abastecimentosGasolina = array();
     }
 
-    public function __toString($litros) {
-        return "Abastecimento - " . $litros . " litros";
-    }
-
     public function abastecer ($litros) {
         if ($litros > $this->litrosGasolina) {
-            print "Não temos gasolina no nosso estoque, reponha primeiro!";
             return false;
-        }
-        else {
-            print "O abastecimento foi feito com sucesso!!";
-            $this->litrosGasolina - $litros;
+
+        } else {
+            $this->litrosGasolina =  $this->litrosGasolina - $litros;
             array_push($this->abastecimentosGasolina, $litros);  
             return true;     
         }
     }
 
     public function reporEstoque ($litros) {
-        $this->litrosGasolina =  $this->litrosGasolina + $litros;
+        array_push($this->abastecimentosGasolina, $litros); 
     }
 
 }
 
 //programa principal
 
+$postos = new Posto(); // Criar uma única vez
 $escolha = 0;
 
 do {
@@ -49,33 +44,39 @@ do {
     print " 3 -------- LISTAR ABASTECIMENTOS ----------\n";
     print " 0 -------- SAIR ------------ \n";
 
-    $escolha = readline("De qual serviço você precisa? ");
-    $postos = new Posto();
+    $escolha = (int)readline("De qual serviço você precisa? ");
 
     switch ($escolha) {
 
         case 0: 
-            print "SAINDO DO PROGRAMA...";
+            print "SAINDO DO PROGRAMA...\n";
+            break;
 
         case 1:
-            $litros = readline("Informe quantos litros deseja abastecer: ");
+            $litros = (int)readline("Informe quantos litros deseja abastecer: ");
             $postos->abastecer($litros);
 
+            if ($postos->abastecer($litros) == false) {
+                 print "Não temos gasolina no nosso estoque, reponha primeiro!\n";
+            }
+            else {
+                print "O abastecimento foi feito com sucesso!\n";
+            }
             break;
 
         case 2:
-            $litros = readline("Informe quantos litros deseja abastecer: ");
+            $litros = (int)readline("Informe quantos litros deseja repor no estoque: ");
             $postos->reporEstoque($litros);
-                
             break;
 
         case 3: 
             foreach ($postos->getAbastecimentosGasolina() as $i => $a) {
-               print ($i + 1) . " | " . $a;
+                print ($i + 1) . " | " . $a . " litros\n";
             }
+            break;
         
         default:
-            print "OPÇÃO INVÁLIDA";
+            print "OPÇÃO INVÁLIDA\n";
             break;
     }
 
