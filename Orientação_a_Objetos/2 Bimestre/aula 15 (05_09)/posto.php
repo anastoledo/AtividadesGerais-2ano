@@ -27,7 +27,7 @@ class Posto {
     }
 
     public function reporEstoque ($litros) {
-        array_push($this->abastecimentosGasolina, $litros); 
+        $this->litrosGasolina = $this->litrosGasolina + $litros;
     }
 
 }
