@@ -3,15 +3,14 @@
 require_once("modelo/Carro.php");
 require_once("modelo/Fabricante.php");
 
-//Função que busca o fabricante pela sigla no array, retornando-o
-function retornaFabricante($fabricanteArray, $sigla) {
-    //Encontra o fabricante no array
-    foreach($fabricanteArray as $f) {
-        if($sigla == $f->getSigla())
-            return $f;
-        
-    }
 
+function retornaFabricante($fabricanteArray, $sigla) {
+   
+    foreach($fabricanteArray as $f) {
+        if($sigla == $f->getSigla()) {
+            return $f;
+        }
+    }
     return null;
 }
 
@@ -56,18 +55,19 @@ do {
             $carro = new Carro();
             $carro->setModelo(readline("Informe o nome do carro: "));
             $carro->setAnoFabricacao(readline("Informe o ano de fabricação do carro: "));
-        
+
             $fabricante = null;
             while($fabricante == null) {
-        
-            print "--- Escolha um fabricante ---\n\n";
-            foreach ($fabricanteArray as $f) {
-                print $f . "\n";
-            }
+
+                print "--- Escolha um fabricante ---\n\n";
+                foreach ($fabricanteArray as $f) {
+                    print $f . "\n";
+                }
+
                 $sigla = readline("Informe a sigla do fabricante: ");
-                 $fabricante = retornaFabricante($fabricanteArray, $sigla);
+                $fabricante = retornaFabricante($fabricanteArray, $sigla);
             }
-        
+
             $carro->setFabricante($fabricante);
             array_push($carroArray, $carro);
             break;
@@ -107,4 +107,3 @@ do {
             break;
     }
 } while ($escolha != 0);
-
