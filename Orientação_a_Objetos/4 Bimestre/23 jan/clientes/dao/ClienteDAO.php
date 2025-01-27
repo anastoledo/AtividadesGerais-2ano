@@ -53,7 +53,7 @@ class ClienteDAO {
         return $clientes;
     }
 
-    private function mapClientes(array $registros) {
+    private function mapClientes(array $registros) { //Vai mapear os dados do banco para o objeto, pois os dados estão ainda como um array associativo
         $clientes = array();
 
         foreach($registros as $reg){
@@ -74,5 +74,36 @@ class ClienteDAO {
             array_push($clientes, $cliente);
         }
         return $clientes;
+    }
+
+    public function buscarPorId(int $id) {
+        $sql = "SELECT * FROM clientes WHERE id = ?";
+    
+        $con = Conexao::getCon();
+        $stm = $con->prepare($sql);
+        $stm->execute([$id]);
+        $registro = $stm->fetch();
+    
+        if ($registro) {
+
+            // Mapear o registro para um objeto Cliente
+            if ($registro['tipo'] == 'F') {
+                $cliente = new ClientePF();
+                $cliente->setNome($registro['nome']);
+                $cliente->setCpf($registro['cpf']);
+            } else {
+                $cliente = new ClientePJ();
+                $cliente->setRazaoSocial($registro['razao_social']);
+                $cliente->setCnpj($registro['cnpj']);
+            }
+    
+            $cliente->setId($registro['id']);
+            $cliente->setNomeSocial($registro['nome_social']);
+            $cliente->setEmail($registro['email']);
+            return $cliente;
+        }
+    
+        // Retorna null caso o cliente não seja encontrado
+        return null;
     }
 }
