@@ -62,21 +62,26 @@ switch ($opcao) {
         }
         break;
 
-    case 4:
-        //Buscar um cliente pelo ID
-
-        //1- Ler o ID
-        $id = 0;
-
-        //2- Chamar o método que retorna o objeto cliente do banco de dados
-        //$clienteDAO = new ClienteDAO();
-        //$cliente = $clienteDAO->buscarPorId($id);
-
-        //3- Verificar se o cliente retornar é diferente de NULL
-        //3.1- Se for diferente de NULL, mostrar os dados do cliente
-        //3.2- Se for NULL, mostrar mensagem de erro
-
-        break;
+        case 4:
+            // 1. Ler o ID do cliente
+            $id = readline("Informe o ID do cliente que deseja buscar: ");
+        
+            // 2. Chamar o método que retorna o objeto cliente do banco de dados
+            $clienteDAO = new ClienteDAO();
+            $cliente = $clienteDAO->buscarPorId($id);
+        
+            // 3. Verificar se o cliente retornado é diferente de NULL
+            if ($cliente !== null) {
+                // Exibir os dados do cliente
+                print "Cliente encontrado:\n";
+                printf(
+                    "%d- %s | %s|  %s | %s\n", $cliente->getId(), $cliente->getTipo(), $cliente->getNomeSocial(),$cliente->getIdentificacao(), $cliente->getEmail());
+            } else {
+                // Mostrar mensagem de erro
+                print "Cliente não encontrado!\n";
+            }
+            break;
+        
 
     case 5:
         # code...
