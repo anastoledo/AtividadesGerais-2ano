@@ -58,42 +58,75 @@ switch ($opcao) {
 
         //Exibir os dados dos objetos
         foreach ($clientes as $c) {
-          printf("%d- %s | %s | %s | %s\n", $c->getId(), $c->getTipo(), $c->getNomeSocial(), $c->getIdentificacao(), $c->getNroDoc(), $c->getEmail());
+          print $c;
         }
         break;
 
-        case 4:
-            // 1. Ler o ID do cliente
-            $id = readline("Informe o ID do cliente que deseja buscar: ");
+    case 4:
+           // 1. Ler o ID do cliente
+           $id = readline("Informe o ID do cliente que deseja buscar: ");
         
-            // 2. Chamar o método que retorna o objeto cliente do banco de dados
-            $clienteDAO = new ClienteDAO();
-            $cliente = $clienteDAO->buscarPorId($id);
-        
-            // 3. Verificar se o cliente retornado é diferente de NULL
-            if ($cliente !== null) {
-                // Exibir os dados do cliente
-                print "Cliente encontrado:\n";
-                printf(
-                    "%d- %s | %s|  %s | %s\n", $cliente->getId(), $cliente->getTipo(), $cliente->getNomeSocial(),$cliente->getIdentificacao(), $cliente->getEmail());
-            } else {
-                // Mostrar mensagem de erro
-                print "Cliente não encontrado!\n";
-            }
-            break;
-        
+           // 2. Chamar o método que retorna o objeto cliente do banco de dados
+           $clienteDAO = new ClienteDAO();
+           $cliente = $clienteDAO->buscarPorId($id);
+       
+           // 3. Verificar se o cliente retornado é diferente de NULL
+           if ($cliente !== null) {
+
+               print $cliente;
+
+           } else {
+            
+               // Mostrar mensagem de erro
+               print "Cliente não encontrado!\n";
+           }
+           break;
 
     case 5:
-        # code...
+
+        //EXCLUSÃO PELO ID DO CLIENTE
+
+        // 1. Listar os clientes
+        print "Lista dos CLIENTES\n\n";
+        $clienteDAO = new ClienteDAO();
+        $clientes = $clienteDAO->listarClientes();
+
+        foreach ($clientes as $c) {
+          print $c . " \n\n ";
+        }
+
+        //2. Solicitar ao usuário para informar o ID
+        $id = readline("Informe o ID do cliente que deseja excluir: ");
+
+        //2.1. Validar se o cliente existe
+        $cliente = $clienteDAO->buscarPorId($id);
+        if ($cliente !== null) {
+            
+             //3. Chamar o ClienteDAO para remover da base de dados
+             $clienteDAO->excluirPorId($id);
+
+             //4. Informar se foi executado
+             print "Cliente excluído com sucesso!\n";
+             } else {
+
+                print "Cliente não encontrado!\n";
+        }
+
+       
+        
+
+        
         break;
+
     case 0:
         print "Programa encerrado!\n";
         break;
 
     default:
-        # code...
+        print "Opção inválida!\n";
         break;
 }
 
 } while ($opcao != 0);
+
 
