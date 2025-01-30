@@ -82,28 +82,28 @@ class ClienteDAO {
         $con = Conexao::getCon();
         $stm = $con->prepare($sql);
         $stm->execute([$id]);
-        $registro = $stm->fetch();
+        $registros = $stm->fetchAll();
     
-        if ($registro) {
+        $clientes = $this->mapClientes($registros);
 
-            // Mapear o registro para um objeto Cliente
-            if ($registro['tipo'] == 'F') {
-                $cliente = new ClientePF();
-                $cliente->setNome($registro['nome']);
-                $cliente->setCpf($registro['cpf']);
-            } else {
-                $cliente = new ClientePJ();
-                $cliente->setRazaoSocial($registro['razao_social']);
-                $cliente->setCnpj($registro['cnpj']);
-            }
-    
-            $cliente->setId($registro['id']);
-            $cliente->setNomeSocial($registro['nome_social']);
-            $cliente->setEmail($registro['email']);
-            return $cliente;
+        if (count($clientes)) {
+            return $clientes [0];
+
+        } else {
+
+            return null;
         }
-    
-        // Retorna null caso o cliente não seja encontrado
-        return null;
+    }
+
+
+    public function excluirPorId(int $id) {
+
+        $sql = "DELETE FROM clientes WHERE id = ?";
+        $con = Conexao::getCon();
+        $stm = $con->prepare($sql);
+        $stm->execute([$id]);
+        
+        
+
     }
 }
