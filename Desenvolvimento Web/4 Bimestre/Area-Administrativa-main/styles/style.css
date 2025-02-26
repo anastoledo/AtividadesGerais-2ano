@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Passero+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+    font-family: "Poppins", serif;
+    font-weight: 400;
+}
+
+
+/* Estilo para o menu lateral */
+.sidebar {
+    min-height: 100vh;
+    background: #DCA47C;
+    color: white;
+    padding: 15px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.nav-navbar{
+    background-color: #DCA47C;
+}
+
+.sidebar a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+}
+
+.sidebar a:hover {
+    background: #495057;
+}
+
+.capa-disco {
+    width: 60px;  /* Ajuste conforme necessário */
+    height: 60px; /* Mantém um formato quadrado */
+    object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer */
+    border-radius: 5px; /* Bordas levemente arredondadas */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Sombra leve para destaque */
+}
+
+.perfil-img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border: 3px solid #ccc;
+}
+
+body.login-pagina {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #dbb69b; 
+}
+
+
+.login-container {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+.login-container h2 {
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+
+.gif-style {
+    width: 100px;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+.form-control {
+    border-radius: 5px;
+}
+
+/* Botão */
+.btn {
+    border-radius: 5px;
+    font-weight: bold;
+    background-color: #DCA47C;
+    color: #FFFFFF;
+    border: #DCA47C;
+   
+}
+
+.btn:hover{
+    transition: transform 0.1 ease-in;
+    background-color: #DCA47C !important;
+}
+
+
+.text{
+    color: #DCA47C;
+}
+
+.text-muted {
+    color: #6c757d !important;
+}
+
+
+
+
+/* Ocultar a sidebar em telas pequenas */
+@media (max-width: 768px) {
+    .sidebar {
+        position: fixed;
+        z-index: 1021 !important;
+        transform: translateX(-100%);
+    }
+
+    .sidebar.show {
+        transform: translateX(0);
+    }
+}
