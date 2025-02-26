@@ -1,0 +1,706 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Slab:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Slab:wght@100..900&display=swap');
+
+
+/*CSS SPLASH.HTML*/
+
+body .body-pag-splash {
+    margin: 0;
+    padding: 0;
+    background-color: #D2E3C8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
+.splash-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.splash-container img {
+    max-width: 70%;
+    height: auto;
+}
+.splash-container h1, p {
+    margin-top: 20px;
+    font-size: 24px;
+    color: #000000;
+}
+
+.splash-container p, h1.barba-negra {
+    font-family: 'Dancing Script', 'Sans-serif';
+    font-size: 4rem; 
+    font-weight: 700; 
+    color: #3C5A40; 
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); 
+    letter-spacing: 2px; 
+    text-align: center; 
+    margin: 20px 0; 
+    line-height: 1.2;
+}
+
+/*CSS LOGIN.HTML*/
+
+body .body-login{
+   margin: 0; 
+}
+
+.main-login {
+    width: 100vw;
+    height: 100vh;
+    background-color: #D2E3C8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-esquerda{
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.login-esquerda img{
+    padding-top: 50px;
+    max-width: 50%;
+    height: auto;
+}
+
+.login-direita{
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.card-login{
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px 35px;
+    background: #739072;
+    border-radius: 20px;
+    box-shadow: 0px 10px 40px #4C4C4C;
+}
+
+.card-login > h1 {
+    font-weight: 800;
+    margin: 0;
+}
+
+.grupo{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 10px 0px;
+
+}
+
+.erro{
+    color: red;
+    display: none;
+}
+
+input{
+    outline: none;
+}
+
+input.invalido {
+    border: solid 2px red;
+}
+
+
+.grupo > input{
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    background: #D2E3C8;
+    font-size: 12pt;
+    box-shadow: 0px 10px 40px #4C4C4C;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.grupo > label {
+    margin-bottom: 10px;
+}
+
+.grupo > input[type="submit"] {
+   transition: background-color 0.3s ease-in-out;
+}
+
+.grupo > input[type="submit"]:hover {
+   background-color: #4F6F52;
+ }
+/*GERAL*/
+
+html{
+    scroll-behavior: smooth;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', 'Sans-serif';
+}
+
+body{
+    background-color: #D2E3C8;
+}
+
+.site{
+    width: 1400px;
+    max-width: 100%;
+    margin: 0 auto;
+        
+}   
+
+
+h2.titulo{
+    padding: 0;
+    color: #000000;
+    font-size: 35px;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 50px;
+    margin-top: 30px;
+   
+}
+
+/*MENU*/
+
+header{
+
+    padding: 40px 4%;
+}
+header >.site{ /*esse maior é pra deixar o site dentro do header*/
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header nav.menu-para-pc a{
+    color: #232121;
+    text-decoration: none;
+    display: inline-block;
+    transition: .2s;
+}
+
+header nav.menu-para-pc a:hover{
+    color: #000000;
+    transform: scale(1.05);
+}
+
+header nav ul{
+    list-style-type:none ;
+}
+
+header nav.menu-para-pc ul li{
+    display: inline-block;
+    padding: 0 40px;
+}
+
+header .botao-contato button{
+    padding: 10px 40px;
+    font-size: 18px;
+    font-weight: 500;
+    background-color: #739072;
+    border: 0;
+    border-radius: 30px;
+    cursor: pointer;
+    color: #FFFFFF;
+}
+
+header .logo img{
+    width: 65px;
+}
+
+/*MENU CELULAR*/
+
+.botao-abrir-menu i{
+    color: #4F6F52;
+    font-size: 40px;
+    display: none;
+}
+
+.overlay-menu{
+    background-color: #00000085;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    display: none;
+}
+
+.menu-para-celular{
+    background-color: #3C5A40;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    width: 0%;
+    overflow: hidden;
+    transition: 1.3s;
+}
+
+.menu-para-celular.abrir-menu{
+    width: 70%;
+}
+
+.menu-para-celular.abrir-menu ~ .overlay-menu{
+    display: block;
+}
+
+.menu-para-celular nav ul{
+    text-align: right;
+}
+
+.menu-para-celular nav ul li a{
+    color: #FFFFFF;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 20px 8%;
+    border-radius: 3px;
+    display: block;
+    transition: 1.3s;
+    text-decoration: none;
+}
+
+.menu-para-celular nav ul li a:hover{
+    background-color: #4F6F52;
+}
+
+.menu-para-celular .botao-fechar{
+    padding: 20px 5% ;
+}
+
+.menu-para-celular .botao-fechar i{
+    color: #FFFFFF;
+    font-size: 30px;
+}
+
+
+.menu-para-celular button{
+    padding: 10px 40px;
+    font-size: 18px;
+    font-weight: 500;
+    background-color: #739072;
+    border: 0;
+    border-radius: 30px;
+    cursor: pointer;
+    color: #FFFFFF;
+}
+
+/*FORMULÁRIO*/
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* tive que pesquisar pra conseguir fazer o modal ficar acima dos outros items*/
+}
+
+.modal.aberto {
+    display: flex;
+}
+
+.modal-conteudo {
+    background-color: #739072;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 500px;
+    color: white;
+    text-align: center;
+    position: relative;
+    z-index: 1001; 
+}
+
+.modal-conteudo h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.modal-conteudo form div {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.modal-conteudo form label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #D2E3C8;
+}
+
+.modal-conteudo form input, 
+.modal-conteudo form select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    font-size: 14px;
+    background-color: #D2E3C8;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    outline: none;
+    color: #000;
+}
+
+.modal-conteudo form button {
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+    background-color: #4F6F52;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.modal-conteudo form button:hover {
+    background-color: #3C5A40;
+}
+
+.fechar-modal {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+}
+
+
+
+/*SERVIÇOS*/
+
+section .servicos{
+    padding: 40px 4%;
+
+}
+
+.servicos .conteudo-servicos{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.servicos .card-servicos{
+    width: 32%;
+    border-radius: 20px;
+    overflow: hidden;
+    border: solid 2px  #232121;
+    margin-bottom: 20px;
+    position: relative;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+    transition: 1s;
+    cursor: pointer;
+}
+
+.servicos .card-servicos:hover{
+    color: #000000;
+    transform: scale(1.05);
+}
+
+.servicos .card-servicos img{
+    width: 50%;
+    display: block;
+    margin: 0 auto 15px;
+    
+}
+
+.servicos .card-servicos h3{
+    margin: 0;
+    margin-top: 15px;
+}
+
+/*TRABALHOS*/
+
+section .trabalhos{
+    padding: 80px 0;
+}
+
+.trabalhos .card-trabalhos{
+    background-color: #4F6F52;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10%;
+    margin-bottom: 60px;
+    border-radius: 4px;
+
+}
+
+.trabalhos .card-trabalhos p{
+    color: #FFFFFF;
+}
+
+.trabalhos .card-trabalhos .img-trabalhos img{
+    max-width: 480px;
+    border-radius: 8px;
+}
+
+.trabalhos .card-trabalhos .txt-trabalhos h3{
+    font-size: 3em;
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+
+.trabalhos .card-trabalhos .txt-trabalhos h3 span{
+    font-weight: 600;
+}
+
+/* EQUIPE*/
+
+section .equipe{
+    padding: 80px 0;
+}
+
+.txt-equipe, .info-equipe{
+    display: inline-block;
+    width: 50%;
+    margin-right: -4px;
+    vertical-align: top;
+}
+
+.equipe .txt-equipe{
+    position: sticky;
+    top: 50%;
+   
+
+}
+
+.equipe .txt-equipe-caixa p{
+    letter-spacing: 2px;
+    margin-top: px;
+}
+
+.equipe .txt-equipe h1{
+    font-size: 4em;
+}
+
+.info-equipe .equipe-caixa{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 40px;
+    border: 2px solid #739072;
+    padding: 20px;
+}
+
+.info-equipe .equipe-caixa img{
+    max-width: 300px;
+}
+
+.info-equipe .equipe-caixa h3{
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.info-equipe .equipe-caixa p{
+    line-height: 20px;
+}
+
+/*HISTÓRICO*/
+
+section.historico {
+    padding: 40px 4%;
+    background-color: #D2E3C8;
+}
+
+.historico .historico-info {
+    margin-top: 20px;
+}
+
+.historico .historico-item {
+    margin-bottom: 15px;
+    border: 2px solid #739072;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.historico .historico-titulo {
+    width: 100%;
+    padding: 15px;
+    background-color: #4F6F52;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.3s ease;
+}
+
+.historico .historico-titulo:hover {
+    background-color: #3C5A40;
+}
+
+.historico .historico-detalhes {
+    padding: 15px;
+    background-color: #739072;
+    color: white;
+    font-size: 14px;
+}
+
+.historico .historico-item.active .historico-detalhes {
+    display: block;
+}
+
+
+
+    @media screen and (max-width: 1020px) {
+        /* MENU */
+        .menu-para-pc, .botao-contato {
+            display: none;
+        }
+        .botao-abrir-menu i{
+            display: block;
+        }
+    
+        header {
+            padding: 20px 4%;
+        }
+    
+        header .logo img {
+            width: 50px;
+        }
+    
+        /* SPLASH */
+        .splash-container img {
+            max-width: 90%;
+        }
+    
+        .splash-container h1, p {
+            font-size: 18px;
+            text-align: center;
+        }
+    
+        /* LOGIN */
+        .login-esquerda, .login-direita {
+            width: 100%;
+            height: auto;
+        }
+    
+        .login-esquerda img {
+            max-width: 70%;
+            padding: 20px 0;
+        }
+    
+        .card-login {
+            width: 90%;
+            padding: 20px;
+        }
+    
+        .card-login h1 {
+            font-size: 20px;
+        }
+    
+        .grupo > input {
+            font-size: 14px;
+            padding: 10px;
+        }
+    
+        /* SERVIÇOS */
+        .servicos .conteudo-servicos {
+            flex-direction: column;
+            align-items: center;
+        }
+    
+        .servicos .card-servicos {
+            width: 90%;
+            margin-bottom: 20px;
+        }
+    
+        /* TRABALHOS */
+        .trabalhos .card-trabalhos {
+            flex-direction: column;
+            gap: 20px;
+            text-align: center;
+        }
+    
+        .trabalhos .card-trabalhos .img-trabalhos img {
+            max-width: 90%;
+        }
+    
+        .trabalhos .card-trabalhos .txt-trabalhos h3 {
+            font-size: 24px;
+        }
+    
+        /* EQUIPE */
+        .equipe .txt-equipe, .info-equipe {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+    
+        .info-equipe .equipe-caixa {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 10px;
+        }
+    
+        .info-equipe .equipe-caixa img {
+            max-width: 80%;
+        }
+    
+        .info-equipe .equipe-caixa h3 {
+            font-size: 18px;
+            
+        }
+    
+        .info-equipe .equipe-caixa p {
+            line-height: 1.5;
+        }
+
+        .equipe .txt-equipe{
+            position: static; /*isso aqui é muito legal meu deuss*/
+        }
+    
+        /* HISTÓRICO */
+        .historico .historico-item {
+            width: 100%;
+        }
+    
+        .historico .historico-titulo {
+            font-size: 16px;
+            padding: 10px;
+        }
+    
+        .historico .historico-detalhes {
+            font-size: 14px;
+        }
+    }
+    
+

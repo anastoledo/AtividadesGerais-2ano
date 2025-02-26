@@ -1,0 +1,1 @@
+a tecnologia me irrita.

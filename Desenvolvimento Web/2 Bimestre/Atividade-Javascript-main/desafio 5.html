@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button>ADICIONE UM NOVO ELEMENTO A LISTA</button>
+
+    <h1>Pilotos mais bonitos do grid</h1>
+
+    <li>Lewis Hamilton</li>
+    <li>Liam Lawson</li>
+    <li>Charles Leclerc</li>
+
+    <script>
+
+        const botao = document.querySelector('button');
+
+        const lista = document.querySelector('li');  
+
+        botao.addEventListener('click', function(){
+
+            const adiciona = document.createElement('li');
+
+            adiciona.textContent = 'George Russell';
+
+            lista.appendChild(adiciona);
+
+        });
+        
+
+    </script>
+    
+</body>
+</html>

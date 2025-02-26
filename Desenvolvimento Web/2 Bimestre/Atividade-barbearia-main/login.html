@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title> Login Barba Negra </title>
+
+</head>
+<body class="body-login">
+
+  <div class="main-login">   
+    
+    <div class="login-esquerda">
+
+    <h1>FAÇA O SEU LOGIN E <br>MARQUE UM HORÁRIO CONOSCO!</h1>
+
+    <img src="imagens/barba.png" alt="Logo">
+
+</div>
+
+<div class="login-direita">
+
+    <div class="card-login">
+
+        <h1>LOGIN</h1>
+
+        <div class="grupo">
+            <label for="Usuario">Usuário</label>
+            <input type="text" placeholder="Informe seu nome">
+            <span class="erro">O nome deve ter pelo menos 3 caracteres</span>
+
+        </div>
+
+        <div class="grupo">
+
+            <label for="Email">E-mail</label>
+            <input type="text" placeholder="Informe o seu e-mail">
+            <span class="erro"> O e-mail precisar ser válido!</span>
+
+        </div>
+
+        <div class="grupo">
+
+            <label for="Senha">Senha</label>
+            <input type="password" placeholder="Informe a sua senha">
+            <span class="erro">A senha precisa ter 8 caracteres</span>
+
+        </div>
+
+
+        <div class="grupo">
+
+            <label for="Senha">Confirme a sua senha</label>
+            <input type="password" placeholder="Confirme a senha">
+            <span class="erro">A confirmação não responde a senha</span>
+
+        </div>
+
+        <form onsubmit="redirecionar(); return false;">
+
+            <div class="grupo">
+
+                <input type="submit">
+    
+            </div>
+
+        </form>
+
+      
+
+    </div>
+
+
+</div>
+
+</div>
+   
+    <script>
+
+    function redirecionar() {
+     window.location.href = "index.html"; 
+  }
+
+        const inputs = document.querySelectorAll ('input');
+        const erros = document.querySelectorAll ('.erro');
+
+        function mostrarErro (inputs, erros) {
+            erros.style.display = 'block'
+            inputs.classList.add('invalido')     
+        }
+
+        function removerErro(inputs, erros) {
+            erros.style.display = 'none'
+            inputs.classList.remove('invalido')
+        }
+
+        function validaNome () {
+            if (inputs[0].value.length <= 3) {
+                console.log("digitou!")
+                mostrarErro(inputs[0], erros[0])
+            }
+
+            else {
+                removerErro(inputs[0], erros[0])
+            }
+        }
+
+        function validaEmail () {
+
+            const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
+
+            if (!emailRegex.test(inputs[1].value)) {
+                mostrarErro(inputs[1], erros[1])
+            }
+            else{
+                removerErro(inputs[1], erros[1])
+            }
+        }
+
+        function validaSenha () {
+
+            const senhaRegex = /^(?=.*[A-Z])(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$/;
+
+            if (!senhaRegex.test(inputs[2].value)) {
+                mostrarErro(inputs[2], erros[2])
+            }
+            else{
+                removerErro(inputs[2], erros[2]) 
+            }
+        }
+
+        function confirmaSenha () {
+            if (inputs[3].value != inputs[2].value) {
+                mostrarErro(inputs[3], erros[3])
+            }
+            else{
+                removerErro(inputs[3], erros[3]) 
+            }  
+        }
+
+        inputs[0].addEventListener('input' , validaNome)
+        inputs[1].addEventListener('input' , validaEmail)
+        inputs[2].addEventListener('input' , validaSenha)
+        inputs[3].addEventListener('input' , confirmaSenha)
+
+        document.querySelector('form').addEventListener('submit', function(evento) {
+
+            evento.preventDefault()
+
+            validaNome()
+            validaEmail()
+            validaSenha()
+            confirmaSenha()
+
+        })
+
+        document.querySelector('.alterarSenha').addEventListener('click', function() {
+
+            const tipoAtual = inputs[2].getAttribute('type');
+            const tipo = tipoAtual === 'password' ? 'text' : 'password';
+
+            inputs[2].setAttribute('type', tipo)
+        })
+
+    </script>
+    
+</body>
+</html>

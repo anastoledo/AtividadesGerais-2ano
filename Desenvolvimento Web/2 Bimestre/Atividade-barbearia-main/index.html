@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barba Negra</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+   
+</head>
+<body>
+
+    <header>
+        <div class="site">
+            <div class="logo">
+                <a href="#">
+                    <img src="imagens/barba.png" alt="">
+                </a>
+            </div>
+
+            <nav class="menu-para-pc">
+                <ul>
+                    <li><a href="#servicos">SERVIÇOS</a></li>
+                    <li><a href="#trabalhos">TRABALHOS</a></li>
+                    <li><a href="#equipe">EQUIPE</a></li>
+                    <li><a href="#historico">HISTÓRICO ATENDIMENTO</a></li>
+                </ul>
+            </nav>
+
+            <div class="botao-contato">
+                <button onclick="abrirModal()">AGENDAR HORÁRIO</button>
+            </div>
+
+            <div class="botao-abrir-menu " id="botao-abrir-menu">
+
+                <i class="bi bi-list"></i>
+
+            </div>
+
+            <div class="menu-para-celular" id="menu-para-celular">
+
+            <div class="botao-fechar">
+                <i class="bi bi-x-lg"></i>
+            </div>
+
+            <nav class="">
+                <ul>
+                    <li><a href="#servicos">SERVIÇOS</a></li>
+                    <li><a href="#trabalhos">TRABALHOS</a></li>
+                    <li><a href="#equipe">EQUIPE</a></li>
+                    <li><a href="#historico">HISTÓRICO ATENDIMENTO</a></li>
+                    <li><a href="#"> <button onclick="abrirModal()">AGENDAR HORÁRIO</button></a></li>
+                </ul>
+
+            </nav>
+
+        </div>
+
+        <div class="overlay-menu" id="overlay-menu">
+
+        </div>
+
+        </div>
+
+    </header>
+
+    <div id="modal-formulario" class="modal">
+        <div class="modal-conteudo">
+            <button onclick="fecharModal()" class="fechar-modal">&times;</button>
+            <h2>Agendar Horário</h2>
+            <form>
+                <div>
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" required>
+                </div>
+                <div>
+                    <label for="contato">Contato:</label>
+                    <input type="tel" id="contato" name="contato" required>
+                </div>
+                <div>
+                    <label for="data">Data do Serviço:</label>
+                    <input type="date" id="data" name="data" required>
+                </div>
+                <div>
+
+                    <div>
+                        <label for="hora">Hora do Serviço:</label>
+                        <input type="time" id="hora" name="hora" required>
+                    </div>
+                    <label for="servico">Serviço Desejado:</label>
+                    <select id="servico" name="servico" required>
+                        <option value="">Selecione</option>
+                        <option value="corte">Corte de Cabelo</option>
+                        <option value="barba">Barba</option>
+                        <option value="estetica">Estética</option>
+                    </select>
+                </div>
+                <div>
+                    <button type="submit">Enviar</button>
+                    <button type="button" onclick="fecharModal()">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <main>
+
+        <section class="servicos" id="servicos">
+
+            <div class="site">
+
+                <h2 class="titulo"> SERVIÇOS.</h2>
+
+                <div class="conteudo-servicos">
+
+                    <div class="card-servicos">
+
+                        <img src="imagens/tesouras.png" alt="">
+                        <h3>Corte de Cabelo</h3>
+
+                    </div>
+
+                    <div class="card-servicos">
+
+                        <img src="imagens/navalha-garrafa.png" alt="">
+                        <h3>Barba</h3>
+
+                    </div>
+
+                    <div class="card-servicos">
+
+                        <img src="imagens/navalha (2).png" alt="">   
+                        <h3>Estética</h3>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="trabalhos" id="trabalhos">
+
+            <div class="site">
+
+                <h2 class="titulo"> TRABALHOS.</h2>
+
+                <article class="card-trabalhos"><!--1-->
+
+                    <div class="txt-trabalhos">
+                        <h3>CORTES DE <br> <span>QUALIDADE</span></h3>
+                        <p>Nossa especialidade é criar cortes modernos e estilosos que valorizam sua personalidade. Cada detalhe é cuidadosamente trabalhado para um resultado impecável.</p>
+                    </div>
+
+                    <div class="img-trabalhos">
+                        <img src="imagens/corte-cabelo.jpg" alt="">
+                    </div>
+
+                </article>
+
+                <article class="card-trabalhos"><!--2-->
+
+                    <div class="img-trabalhos">
+                        <img src="imagens/fazendo-barba.jpg" alt="">
+                    </div>
+
+                    <div class="txt-trabalhos">
+                        <h3>BARBA SEMPRE <br> <span>BONITA</span></h3>
+                        <p>Transformamos sua barba em um verdadeiro destaque. Nossa equipe utiliza as melhores técnicas para garantir um visual alinhado e profissional.</p>
+                    </div>
+
+                </article>
+
+                <article class="card-trabalhos"><!--3-->
+
+                    <div class="txt-trabalhos">
+                        <h3>ELEVE SUA<br><span>CONFIANÇA</span></h3>
+                        <p>Penteados únicos e elegantes que refletem o seu estilo. Saia com uma aparência renovada e confiante.</p>
+                    </div>
+
+                    <div class="img-trabalhos">
+                        <img src="imagens/penteado.jpg" alt="">
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+        <section class="equipe" id="equipe">
+
+            <div class="site">
+
+                <div class="txt-equipe">
+
+                    <h1>CONHEÇA A NOSSA EQUIPE</h1>
+
+                </div>
+
+                <div class="info-equipe">
+
+                    <article class="equipe-caixa"><!--caixa 1-->
+
+                       <div class="img-equipe-caixa">
+                        <img src="imagens/Henrique.jpg" alt="">
+                       </div> 
+
+                       <div class="txt-equipe-caixa">
+                        <h3>Henrique Vieira</h3>
+                        <p>Profissional com anos de experiência em cortes masculinos e técnicas de degradê. Sempre atualizado com as últimas tendências do mercado.</p>
+                       </div>
+
+                    </article>
+
+                    <article class="equipe-caixa"><!--caixa 2-->
+
+                        <div class="img-equipe-caixa">
+                         <img src="imagens/Frida.jpg" alt="">
+                        </div> 
+ 
+                        <div class="txt-equipe-caixa">
+                         <h3>Frida Oliveira</h3>
+                         <p>Especialista em estética masculina, trazendo harmonia e precisão para cada detalhe do seu rosto.</p>
+                        </div>
+ 
+                     </article>
+
+                     <article class="equipe-caixa"><!--caixa 3-->
+
+                        <div class="img-equipe-caixa">
+                         <img src="imagens/Antonio.jpg" alt="">
+                        </div> 
+ 
+                        <div class="txt-equipe-caixa">
+                         <h3>Antonio Nascimento</h3>
+                         <p>Mestre em modelagem de barba, garantindo um acabamento impecável e personalizado para cada cliente.</p>
+                        </div>
+ 
+                     </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="historico" id="historico">
+            
+            <div class="site">
+
+                <h2 class="titulo">HISTÓRICO DE ATENDIMENTOS</h2>
+        
+                <div class="historico-info">
+
+                    <div class="historico-item">
+
+                        <button class="historico-titulo">Atendimento 01 - Corte Masculino (12/09/2024)</button><!--O BOTÃO NÃO TA FUNCIONANDOOOOO :((((-->
+                        <div class="historico-detalhes">
+
+                            <p>Serviço: Corte masculino com degradê.<br>Profissional: Henrique Vieira.<br>Avaliação: ★★★★★.</p>
+                        </div>
+                    </div>
+        
+                    <div class="historico-item">
+                        <button class="historico-titulo">Atendimento 02 - Estética (10/11/2024)</button>
+                        <div class="historico-detalhes">
+                            <p>Serviço: Design de sobrancelhas masculino .<br>Profissional: Frida Oliveira.<br> Avaliação: ★★★★★.</p>
+                        </div>
+                    </div>
+        
+                    <div class="historico-item">
+                        <button class="historico-titulo">Atendimento 03 - Barba (12/12/2024)</button>
+                        <div class="historico-detalhes">
+                            <p>Serviço: Barba completa com modelagem.<br>Profissional: Antonio Nascimento.<br>Avaliação:★★★★★.</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+        
+    </main>
+
+    <script> //js só pra usar o modal
+
+        function abrirModal() {
+            const modal = document.getElementById('modal-formulario');
+            modal.classList.add('aberto');
+        }
+
+
+        function fecharModal() {
+            const modal = document.getElementById('modal-formulario');
+            modal.classList.remove('aberto');
+        }
+
+        let btnMenu = document.getElementById('botao-abrir-menu');
+        let menu = document.getElementById('menu-para-celular');
+        let overlay = document.getElementById('overlay-menu');
+
+        btnMenu.addEventListener('click', function(){
+
+            menu.classList.add('abrir-menu');
+        });
+
+        menu.addEventListener('click', function(){
+        menu.classList.remove('abrir-menu');
+        });
+
+        overlay.addEventListener('click', function(){
+        menu.classList.remove('abrir-menu');
+        });
+
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>
