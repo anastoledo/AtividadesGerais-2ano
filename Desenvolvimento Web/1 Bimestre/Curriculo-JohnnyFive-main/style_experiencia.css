@@ -1,0 +1,56 @@
+body {
+    background-color: #F9E897;
+    font-family: "Roboto Slab", sans-serif;
+    letter-spacing: 1,5px;
+    color: #444;
+    width: 80%;
+    margin: 0 auto;
+    padding: 2% 0;
+
+}
+
+main {
+    background-color: white;
+    border-radius: 5px;
+    text-align: center;
+}
+
+table {
+    border-collapse: collapse;
+    border: 2px solid rgb(140 140 140);
+    font-family: "Roboto Slab",sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+  }
+  
+  caption {
+    caption-side: bottom;
+    padding: 10px;
+    font-weight: bold;
+  }
+  
+  thead,
+  tfoot {
+    background-color:#F9E897 ;
+  }
+  
+  th,
+  td {
+    border: 1px solid rgb(160 160 160);
+    padding: 8px 10px;
+  }
+  
+  td:last-of-type {
+    text-align: center;
+  }
+  
+  section {
+    margin-top: 0px;
+    padding-bottom: 5px;
+    border-top: solid 1px grey;
+}
+
+div {
+    text-align: center;
+    display: block;
+}

@@ -1,0 +1,39 @@
+
+body {
+    color: white; /*tbm poderia ser #ffffff*/
+    background: #F08080;
+    font-family:Arial, Helvetica, sans-serif ;
+}
+
+h1 {
+    font-size: 55px;
+    line-height: 45px ;
+}
+
+h1 strong {
+    color:#dc143c ;
+}
+
+header ul li a {
+    color:aliceblue;
+    text-decoration: dashed;
+
+}
+
+header ul {
+    list-style: none;
+}
+
+header ul li {
+    display: inline;
+}
+
+header, main, footer {
+    margin: 0 100px 0 100px;
+}
+
+footer {
+    color:#dc143c ;
+}
+
+
